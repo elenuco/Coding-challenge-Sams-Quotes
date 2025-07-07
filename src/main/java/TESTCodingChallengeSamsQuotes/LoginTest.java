@@ -3,17 +3,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class LoginTest {
-    public static  void main(String[] args){
+    public static  void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Browser drivers\\chromedriver.exe");
         WebDriver driver= new ChromeDriver();
         driver.get("https://quotes.toscrape.com/");
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        //This is the time of excecution
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
+
+        //Access to log in
         WebElement login = driver.findElement(By.xpath("//a[normalize-space()='Login']"));
         login.isDisplayed();
         login.isEnabled();

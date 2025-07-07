@@ -13,7 +13,7 @@ public class Main {
         driver.manage().window().maximize();
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/p/a"));
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
